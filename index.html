@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- SEO: replace "Your Name" etc. with your real details so Google shows them -->
+<title>Your Name | PhD Scholar, Your University</title>
+<meta name="description" content="Your Name is a PhD scholar at Your University researching your research area. Publications, current research, certificates, talks and gallery.">
+<meta name="author" content="Your Name">
+<link rel="canonical" href="https://yourusername.github.io/">
+<meta property="og:title" content="Your Name | PhD Scholar">
+<meta property="og:description" content="Research, publications, academics and gallery of Your Name.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://yourusername.github.io/">
+<meta property="og:image" content="https://yourusername.github.io/images/portrait.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Your Name","jobTitle":"PhD Scholar",
+ "affiliation":{"@type":"CollegeOrUniversity","name":"Your University"},
+ "url":"https://yourusername.github.io/","email":"mailto:your.name@university.edu",
+ "sameAs":["https://scholar.google.com","https://orcid.org","https://www.linkedin.com"]}
+</script>
+<style>:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: fixed "title page" spine on the left, chapters on the right. Palette: lavender-grey paper, aubergine ink, plum-rose accent, sage second voice. */
+:root{
+  --paper:#EFEDF3; --sheet:#F8F7FA; --ink:#211C2E; --muted:#6A6478; --rule:#D9D4E2;
+  --accent:#8B3F63; --accent-soft:#EEDCE5; --sage:#5E8070; --sage-soft:#DCE8E1;
+  --hero-a:#E9DDE6; --hero-b:#DCE3EC;
+  --display:"Bodoni Moda","Didot","Times New Roman",serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#141219; --sheet:#1B1822; --ink:#ECE8F2; --muted:#A39CB2; --rule:#2D2838;
+  --accent:#E3A3C1; --accent-soft:#3A2431; --sage:#9CC3AF; --sage-soft:#1F2D27;
+  --hero-a:#2A1F2A; --hero-b:#1C2230; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141219; --sheet:#1B1822; --ink:#ECE8F2; --muted:#A39CB2; --rule:#2D2838;
+  --accent:#E3A3C1; --accent-soft:#3A2431; --sage:#9CC3AF; --sage-soft:#1F2D27;
+  --hero-a:#2A1F2A; --hero-b:#1C2230; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+
+.shell{display:grid;grid-template-columns:minmax(260px,330px) minmax(0,1fr);max-width:1260px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));gap:clamp(24px,5vw,72px)}
+
+.spine{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;padding-block:48px 28px;display:flex;flex-direction:column;gap:24px;min-height:100vh}
+.portrait{width:140px;aspect-ratio:4/5;max-width:100%;border-radius:70px 70px 4px 4px;overflow:hidden;
+  background:radial-gradient(circle at 50% 40%,var(--accent) 0 21%,transparent 22%),radial-gradient(ellipse 62% 42% at 50% 100%,var(--accent) 0 98%,transparent 100%),linear-gradient(160deg,var(--hero-a),var(--hero-b));
+  display:grid;place-items:end center;color:var(--sheet);font:500 10px/1 var(--mono);letter-spacing:.08em;padding-bottom:8px;text-transform:uppercase}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.name{font-size:clamp(2.2rem,3.6vw,3rem);line-height:1.02;letter-spacing:-.01em}
+.name em{font-style:italic;color:var(--accent)}
+.role{color:var(--muted);margin:10px 0 0;font-size:.95rem}
+.nav{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule);padding-top:14px}
+.nav a{color:var(--ink);text-decoration:none;display:flex;justify-content:space-between;padding:5px 0;font-size:.95rem}
+.nav a span{font:400 .72rem/1 var(--mono);color:var(--muted);align-self:center}
+.nav a:hover,.nav a.on{color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.85rem;margin-top:auto}
+.links a{color:var(--muted)}
+.theme{background:none;border:1px solid var(--rule);color:var(--muted);font:500 .72rem var(--mono);padding:6px 10px;border-radius:999px;cursor:pointer;width:max-content;letter-spacing:.06em;text-transform:uppercase}
+
+main{padding-block:48px 96px;display:flex;flex-direction:column;gap:88px;min-width:0}
+section{scroll-margin-top:32px;min-width:0}
+.eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+h2{font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.1;margin-bottom:24px}
+h2 em,.lede em{font-style:italic;color:var(--accent)}
+
+.hero{background:linear-gradient(135deg,var(--hero-a),var(--hero-b));border-radius:4px;padding:clamp(24px,4vw,44px)}
+.lede{font-family:var(--display);font-size:clamp(1.35rem,2.3vw,1.75rem);line-height:1.38;max-width:32ch;margin:0 0 22px}
+.prose{max-width:64ch}
+.prose p{margin:0 0 14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 28px;margin-top:26px;padding-top:20px;border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
+.facts dt{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-size:.95rem}
+
+.projects{border-top:1px solid var(--rule)}
+.proj{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 28px;padding:24px 0;border-bottom:1px solid var(--rule)}
+.status{font:500 .7rem/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.status b{display:inline-block;padding:3px 9px;border-radius:999px;font-weight:500;margin-bottom:6px;background:var(--sage-soft);color:var(--sage)}
+.status b.alt{background:var(--accent-soft);color:var(--accent)}
+.proj h3{font-size:1.35rem;line-height:1.25;margin-bottom:6px}
+.proj p{margin:0;color:var(--muted);max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font:400 .72rem var(--mono);border:1px solid var(--rule);padding:3px 8px;border-radius:2px;color:var(--muted)}
+
+.pubs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px}
+.pub{display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px}
+.yr{font:500 .85rem var(--mono);color:var(--accent);font-variant-numeric:tabular-nums;padding-top:3px}
+.pub .t{font-family:var(--display);font-size:1.15rem;line-height:1.35}
+.pub .a{color:var(--muted);font-size:.9rem;margin-top:2px}
+.pub .v{font-size:.88rem;font-style:italic;color:var(--muted)}
+.pub .doi{font:400 .74rem var(--mono);margin-top:6px;display:flex;gap:14px;flex-wrap:wrap}
+
+.tl{position:relative;padding-left:26px;margin:0;display:flex;flex-direction:column;gap:26px;max-width:680px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--rule)}
+.tl li{list-style:none;position:relative}
+.tl li::before{content:"";position:absolute;left:-26px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:1.5px solid var(--accent)}
+.tl li:first-child::before{background:var(--accent)}
+.tl .when{font:500 .74rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.tl h3{font-size:1.2rem;margin:2px 0}
+.tl p{margin:0;color:var(--muted);font-size:.93rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;margin-top:48px}
+.cols h4{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:.93rem}
+.plain li{display:flex;gap:12px}
+.plain li span{font:400 .78rem var(--mono);color:var(--muted);min-width:42px;padding-top:2px;font-variant-numeric:tabular-nums}
+
+/* Certificates: framed like a mounted diploma */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.cert{background:var(--sheet);border:1px solid var(--rule);padding:8px;border-radius:3px;display:flex;flex-direction:column}
+.cert .frame{border:1px solid var(--rule);padding:18px 16px 16px;flex:1;display:flex;flex-direction:column;gap:6px;
+  background:radial-gradient(circle at 100% 0,var(--accent-soft) 0 38px,transparent 39px)}
+.seal{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);display:grid;place-items:center;color:var(--accent);font:500 .62rem var(--mono);margin-bottom:6px}
+.cert h3{font-size:1.08rem;line-height:1.3}
+.cert .by{color:var(--muted);font-size:.85rem}
+.cert .meta{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;gap:8px;font:400 .72rem var(--mono);color:var(--muted)}
+
+/* Videos */
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.vid{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:10px}
+.thumb{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:3px;overflow:hidden;background:linear-gradient(135deg,var(--hero-a),var(--hero-b))}
+.thumb img,.thumb canvas{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;inset:0;display:grid;place-items:center}
+.play i{width:52px;height:52px;border-radius:50%;background:rgba(20,16,26,.62);display:grid;place-items:center;transition:transform .25s}
+.play i::after{content:"";border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.vid:hover .play i{transform:scale(1.1)}
+.dur{position:absolute;right:8px;bottom:8px;background:rgba(20,16,26,.75);color:#fff;font:500 .7rem var(--mono);padding:2px 6px;border-radius:2px}
+.vid h3{font-size:1.1rem;line-height:1.3}
+.vid p{margin:0;color:var(--muted);font-size:.85rem}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:120px;gap:10px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:3px;background:var(--accent-soft)}
+.gallery button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gallery canvas,.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gallery button:hover canvas,.gallery button:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;font:400 .7rem var(--mono);color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.g0{grid-column:span 3;grid-row:span 3}.g1{grid-column:span 3;grid-row:span 2}.g2{grid-column:span 2}
+.g3{grid-column:span 1}.g4{grid-column:span 2;grid-row:span 2}.g5{grid-column:span 4;grid-row:span 2}
+.lb{position:fixed;inset:0;background:rgba(14,11,18,.92);display:grid;place-items:center;z-index:50;padding:24px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.lb figure{margin:0;max-width:960px;width:100%;display:flex;flex-direction:column;gap:12px}
+.lb .stage{width:100%;aspect-ratio:3/2;max-height:78vh;display:grid;place-items:center}
+.lb .stage canvas,.lb .stage img{max-width:100%;max-height:100%;border-radius:3px}
+.lb figcaption{color:#ECE8F2;font-size:.9rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.lb button{background:none;border:1px solid #6A6478;color:#ECE8F2;font:500 .72rem var(--mono);padding:6px 12px;border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:.06em}
+
+.contact{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline}
+.mail{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,2rem);user-select:all;word-break:break-all}
+.copy{background:var(--accent);color:var(--sheet);border:0;font:500 .74rem var(--mono);padding:8px 14px;border-radius:999px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase}
+footer{font:400 .74rem var(--mono);color:var(--muted);border-top:1px solid var(--rule);padding-top:18px}
+
+@media (max-width:860px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0}
+  .spine{position:static;min-height:0;padding-block:32px 8px}
+  .top{display:flex;gap:18px;align-items:flex-end}
+  .portrait{width:96px;border-radius:48px 48px 4px 4px}
+  .nav{flex-direction:row;flex-wrap:wrap;gap:2px 16px}
+  .nav a span{display:none}
+  .links{margin-top:0}
+  main{padding-top:24px;gap:64px}
+  .proj{grid-template-columns:minmax(0,1fr)}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:140px}
+  .gallery button{grid-column:span 1!important;grid-row:span 1!important}
+  .gallery .g0,.gallery .g5{grid-column:span 2!important;grid-row:span 2!important}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<div class="shell">
+  <aside class="spine">
+    <div class="top">
+      <div class="portrait" id="portrait">Your photo</div>
+      <div>
+        <h1 class="name" id="name">Your <em>Name</em></h1>
+        <p class="role" id="role">PhD Scholar · Department of Your Field<br>Your University, Chennai</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#bio">Bio <span>i</span></a>
+      <a href="#research">Current research <span>ii</span></a>
+      <a href="#publications">Publications <span>iii</span></a>
+      <a href="#academics">Academics <span>iv</span></a>
+      <a href="#certificates">Certificates <span>v</span></a>
+      <a href="#videos">Talks &amp; videos <span>vi</span></a>
+      <a href="#gallery">Gallery <span>vii</span></a>
+      <a href="#contact">Contact <span>viii</span></a>
+    </nav>
+    <div class="links" id="profiles"></div>
+    <button class="theme" id="themeBtn" type="button">Switch theme</button>
+  </aside>
+
+  <main>
+    <section id="bio">
+      <div class="eyebrow">i · Bio</div>
+      <div class="hero">
+        <p class="lede" id="lede">I study how <em>your research area</em> shapes the questions we can answer about the world around us.</p>
+        <div class="prose" id="bioText"></div>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </section>
+
+    <section id="research"><div class="eyebrow">ii · Current research</div><h2>What I'm <em>working on</em> now</h2><div class="projects" id="projects"></div></section>
+    <section id="publications"><div class="eyebrow">iii · Publications</div><h2>Selected <em>papers</em></h2><ol class="pubs" id="pubs"></ol></section>
+    <section id="academics"><div class="eyebrow">iv · Academics</div><h2>Education &amp; <em>experience</em></h2><ul class="tl" id="edu"></ul>
+      <div class="cols"><div><h4>Awards &amp; fellowships</h4><ul class="plain" id="awards"></ul></div><div><h4>Teaching &amp; service</h4><ul class="plain" id="service"></ul></div></div></section>
+    <section id="certificates"><div class="eyebrow">v · Certificates</div><h2>Courses &amp; <em>credentials</em></h2><div class="certs" id="certs"></div></section>
+    <section id="videos"><div class="eyebrow">vi · Talks &amp; videos</div><h2>Watch &amp; <em>listen</em></h2><div class="videos" id="vids"></div></section>
+    <section id="gallery"><div class="eyebrow">vii · Gallery</div><h2>Field, lab &amp; <em>conferences</em></h2><div class="gallery" id="gallery-grid"></div></section>
+    <section id="contact"><div class="eyebrow">viii · Contact</div><h2>Get in <em>touch</em></h2>
+      <p class="prose" style="margin:0 0 18px;color:var(--muted)">Open to collaborations, talks, and postdoctoral conversations.</p>
+      <div class="contact"><span class="mail" id="mail"></span><button class="copy" id="copyBtn" type="button">Copy email</button></div></section>
+    <footer id="foot"></footer>
+  </main>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <figure><div class="stage" id="stage"></div>
+    <figcaption><span id="lbt"></span><span style="display:flex;gap:8px"><button id="prev" type="button">Prev</button><button id="next" type="button">Next</button><button id="close" type="button">Close</button></span></figcaption>
+  </figure>
+</div>
+
+<script>
+/* ============================================================
+   EDIT YOUR DETAILS HERE. Everything on the page comes from this block.
+   To add a photo/certificate/video: copy one line, paste it, change the text.
+   Images: put the file in an "images" folder next to index.html, then write
+   "images/your-file.jpg". Leave img empty ("") to show a placeholder.
+   ============================================================ */
+var SITE = {
+  email: "your.name@university.edu",
+  photo: "",   // e.g. "images/portrait.jpg"
+  updated: "October 2026",
+  profiles: [
+    ["Google Scholar","https://scholar.google.com"],
+    ["ORCID","https://orcid.org"],
+    ["ResearchGate","https://www.researchgate.net"],
+    ["LinkedIn","https://www.linkedin.com"]
+  ],
+  bio: [
+    "I am a doctoral researcher in the Department of Your Field at Your University, working with Prof. Advisor Name. My work sits between theory and fieldwork: I build models, then test them against data I collect myself.",
+    "Before my PhD, I completed my M.Sc. and B.Sc. in related disciplines. Outside the lab I teach undergraduate tutorials, review for two journals, and photograph the places my fieldwork takes me."
+  ],
+  facts: [["Position","PhD Scholar, Year 3"],["Advisor","Prof. Advisor Name"],["Focus","Area one · Area two"],["Based in","Chennai, India"]],
+  research: [
+    {status:"Active", when:"2025 – present", title:"Thesis project: the central question of your dissertation", text:"Two sentences on the problem, why it matters, and the approach. Name the method and the dataset.", tags:["Method A","Field survey","Python"]},
+    {status:"Under review", when:"2025 – 2026", title:"Collaborative study with another lab or institute", text:"What you contributed, who you worked with, and the main finding so far.", tags:["Collaboration","Modelling"]},
+    {status:"Starting", when:"2026", title:"Next direction you want to explore", text:"The open question you plan to take on next.", tags:["Proposal","Pilot data"]}
+  ],
+  publications: [
+    {year:2026, title:"Title of your most recent paper", authors:"<u>Y. Name</u>, C. Coauthor, A. Advisor", venue:"Journal Name, vol. 12, pp. 101–118", links:[["doi:10.xxxx/xxxxx","https://doi.org"]]},
+    {year:2025, title:"Conference paper title goes here", authors:"<u>Y. Name</u>, A. Advisor", venue:"Proceedings of Conference Name 2025", links:[["doi:10.xxxx/xxxxx","https://doi.org"]]},
+    {year:2024, title:"An earlier article or book chapter", authors:"C. Coauthor, <u>Y. Name</u>", venue:"Book or Journal Title", links:[]}
+  ],
+  education: [
+    ["2023 – present","PhD, Your Field","Your University · Advisor: Prof. Advisor Name"],
+    ["2021 – 2023","M.Sc., Related Field","University Name · CGPA 9.1 / 10"],
+    ["2018 – 2021","B.Sc., Related Field","College Name · First class with distinction"]
+  ],
+  awards: [["2024","Name of fellowship (e.g. UGC-JRF / CSIR-NET)"],["2023","Best poster, Conference Name"],["2021","University gold medal"]],
+  service: [["2025","Teaching assistant, Course Name"],["2024","Reviewer, Journal Name"],["2024","Organiser, Department seminar series"]],
+  certificates: [
+    {title:"Machine Learning Specialization", by:"Coursera · Stanford Online", date:"Jun 2025", link:"", img:""},
+    {title:"Research Methodology Workshop", by:"Your University", date:"Feb 2025", link:"", img:""},
+    {title:"NPTEL Course Name (Elite + Gold)", by:"NPTEL · IIT Madras", date:"Nov 2024", link:"", img:""},
+    {title:"Best Paper Presentation", by:"Conference Name 2024", date:"Aug 2024", link:"", img:""}
+  ],
+  videos: [
+    {title:"Invited talk: your research in 15 minutes", where:"Department seminar", dur:"15:24", url:"https://www.youtube.com", img:""},
+    {title:"Three-minute thesis", where:"Your University 3MT 2025", dur:"3:02", url:"https://www.youtube.com", img:""},
+    {title:"Fieldwork vlog", where:"Personal channel", dur:"8:47", url:"https://www.youtube.com", img:""}
+  ],
+  gallery: [
+    {caption:"Fieldwork site, 2025", img:""},
+    {caption:"Lab bench, March 2026", img:""},
+    {caption:"Poster session", img:""},
+    {caption:"Samples", img:""},
+    {caption:"Conference talk, 2025", img:""},
+    {caption:"Research group retreat", img:""}
+  ]
+};
+/* ============================ end of editable block ============================ */
+
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var root=document.documentElement;
+  $('themeBtn').addEventListener('click',function(){
+    var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark';
+  });
+
+  var hues=[[328,30],[210,28],[150,22],[280,24],[20,34],[180,22]];
+  function paint(cv,i){
+    var x=cv.getContext('2d'),w=cv.width,H=cv.height,h=hues[i%hues.length];
+    var g=x.createLinearGradient(0,0,w,H);
+    g.addColorStop(0,'hsl('+h[0]+','+h[1]+'%,84%)');g.addColorStop(1,'hsl('+(h[0]+40)+','+h[1]+'%,62%)');
+    x.fillStyle=g;x.fillRect(0,0,w,H);
+    x.fillStyle='hsla(40,80%,95%,.75)';x.beginPath();x.arc(w*(.2+.12*(i%5)),H*.3,H*.09,0,7);x.fill();
+    for(var l=0;l<3;l++){
+      x.fillStyle='hsla('+(h[0]+20)+','+(h[1]+6)+'%,'+(50-l*12)+'%,.85)';x.beginPath();x.moveTo(0,H);
+      for(var k=0;k<=w;k+=w/24){x.lineTo(k,H*(.55+l*.13)+Math.sin(k/w*6+i+l*2)*H*.06+Math.sin(k/w*17+l)*H*.02);}
+      x.lineTo(w,H);x.fill();
+    }
+  }
+  function media(src,alt,i,w,h){
+    var cv=document.createElement('canvas');cv.width=w;cv.height=h;paint(cv,i);
+    if(!src)return cv;
+    var im=new Image();im.alt=alt;im.loading='lazy';im.src=src;
+    im.onerror=function(){if(im.parentNode)im.parentNode.replaceChild(cv,im)};
+    return im;
+  }
+
+  if(SITE.photo){$('portrait').textContent='';$('portrait').appendChild(media(SITE.photo,'Portrait',0,280,350));}
+  $('profiles').innerHTML=SITE.profiles.map(function(p){return '<a href="'+esc(p[1])+'" target="_blank" rel="noopener">'+esc(p[0])+'</a>'}).join('');
+  $('bioText').innerHTML=SITE.bio.map(function(p){return '<p>'+esc(p)+'</p>'}).join('');
+  $('facts').innerHTML=SITE.facts.map(function(f){return '<div><dt>'+esc(f[0])+'</dt><dd>'+esc(f[1])+'</dd></div>'}).join('');
+  $('projects').innerHTML=SITE.research.map(function(r,i){return '<article class="proj"><div class="status"><b class="'+(i%2?'alt':'')+'">'+esc(r.status)+'</b><br>'+esc(r.when)+'</div><div><h3>'+esc(r.title)+'</h3><p>'+esc(r.text)+'</p><div class="tags">'+r.tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div></div></article>'}).join('');
+  $('pubs').innerHTML=SITE.publications.map(function(p){return '<li class="pub"><div class="yr">'+p.year+'</div><div><div class="t">'+esc(p.title)+'</div><div class="a">'+p.authors+'</div><div class="v">'+esc(p.venue)+'</div>'+(p.links.length?'<div class="doi">'+p.links.map(function(l){return '<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>'}).join('')+'</div>':'')+'</div></li>'}).join('');
+  $('edu').innerHTML=SITE.education.map(function(e){return '<li><div class="when">'+esc(e[0])+'</div><h3>'+esc(e[1])+'</h3><p>'+esc(e[2])+'</p></li>'}).join('');
+  function plain(list){return list.map(function(a){return '<li><span>'+esc(a[0])+'</span>'+esc(a[1])+'</li>'}).join('')}
+  $('awards').innerHTML=plain(SITE.awards);$('service').innerHTML=plain(SITE.service);
+  $('certs').innerHTML=SITE.certificates.map(function(c){
+    var view=c.link||c.img;
+    return '<article class="cert"><div class="frame"><div class="seal">✓</div><h3>'+esc(c.title)+'</h3><div class="by">'+esc(c.by)+'</div><div class="meta"><span>'+esc(c.date)+'</span>'+(view?'<a href="'+esc(view)+'" target="_blank" rel="noopener">View</a>':'<span>Certificate</span>')+'</div></div></article>'}).join('');
+  var vids=$('vids');
+  SITE.videos.forEach(function(v,i){
+    var a=document.createElement('a');a.className='vid';a.href=v.url;a.target='_blank';a.rel='noopener';
+    var t=document.createElement('div');t.className='thumb';t.appendChild(media(v.img,v.title,i+2,640,360));
+    t.insertAdjacentHTML('beforeend','<div class="play"><i></i></div><span class="dur">'+esc(v.dur)+'</span>');
+    a.appendChild(t);a.insertAdjacentHTML('beforeend','<h3>'+esc(v.title)+'</h3><p>'+esc(v.where)+'</p>');vids.appendChild(a);
+  });
+
+  var grid=$('gallery-grid'),G=SITE.gallery;
+  G.forEach(function(it,i){
+    var b=document.createElement('button');b.className='g'+(i%6);b.type='button';b.setAttribute('aria-label','Open photo: '+it.caption);
+    b.appendChild(media(it.img,it.caption,i,600,400));
+    var f=document.createElement('figcaption');f.textContent=it.caption;b.appendChild(f);
+    b.addEventListener('click',function(){open(i)});grid.appendChild(b);
+  });
+  var lb=$('lb'),cur=0;
+  function open(i){cur=(i+G.length)%G.length;$('stage').innerHTML='';$('stage').appendChild(media(G[cur].img,G[cur].caption,cur,1200,800));$('lbt').textContent=G[cur].caption;lb.hidden=false;$('close').focus();}
+  $('close').onclick=function(){lb.hidden=true};$('prev').onclick=function(){open(cur-1)};$('next').onclick=function(){open(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.id==='stage')lb.hidden=true});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowRight')open(cur+1);if(e.key==='ArrowLeft')open(cur-1);});
+
+  $('mail').textContent=SITE.email;
+  $('foot').textContent='© '+new Date().getFullYear()+' · Last updated '+SITE.updated;
+  var cb=$('copyBtn');
+  cb.addEventListener('click',function(){
+    function sel(){var r=document.createRange();r.selectNodeContents($('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Selected';}
+    try{navigator.clipboard.writeText(SITE.email).then(function(){cb.textContent='Copied'},sel);}catch(e){sel();}
+    setTimeout(function(){cb.textContent='Copy email'},1800);
+  });
+
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-30% 0px -60% 0px'});
+    document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+
+</body>
+</html>
